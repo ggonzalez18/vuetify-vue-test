@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <v-app-bar>
+    <v-app-bar app color="dark" dark>
       <v-toolbar-title>Edutecno</v-toolbar-title>
-      <v-btn color="success">Home</v-btn>
-        <v-spacer></v-spacer>
-        <v-btn color="info">Login</v-btn>
+      <v-spacer></v-spacer>
+      <v-btn text>Home</v-btn>
+      <v-btn text>Login</v-btn>
     </v-app-bar>
     <v-card width="420px" class="mx-auto my-auto">
       <v-card-title><h1 class="mx-auto">Login</h1></v-card-title>
