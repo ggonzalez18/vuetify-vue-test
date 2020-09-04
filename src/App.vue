@@ -1,32 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar>
+      <v-toolbar-title>Edutecno</v-toolbar-title>
+      <v-btn color="success">Home</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn color="info">Login</v-btn>
+    </v-app-bar>
+    <v-card width="420px" class="mx-auto my-auto">
+      <v-card-title><h1 class="mx-auto">Login</h1></v-card-title>
+      <v-card-text>
+        <v-form>
+          <v-text-field label="userName" prepend-icon="mdi-account-circle"/>
+          <v-text-field
+          @click:append="showPassword = !showPassword"
+          label="password"
+          :type="showPassword ? 'text' : 'password'"
+          prepend-icon="mdi-lock"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"/>
+        </v-form>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn color="success">Register</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn color="info">Login</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-app>
+
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  name: 'App',
+  components: {
+  },
+  data: () => ({
+    showPassword: false
+  }),
+};
+</script>
